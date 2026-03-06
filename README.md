@@ -87,6 +87,9 @@ mesa-libGL-devel libdrm-devel tk-devel git-lfs
 - At least 8Gb of **RAM**,
 - At least 15Gb of **Disk**.
 
+### Software Requirements 
+- **Python3.10.19**
+- **Git LFS**
 <br />
 
 **Python Installation**
