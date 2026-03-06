@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+message ProtoMonInfo {
+    string network_name = 1;
+    double fps = 2;
+    double utilization = 3;
+}
+
+enum ProtoMonStreamDirection {
+    PROTO__STREAM_DIRECTION__HOST_TO_DEVICE = 0;
+    PROTO__STREAM_DIRECTION__DEVICE_TO_HOST = 1;
+}
+
+message ProtoMonDeviceInfo {
+    string device_id = 1;
+    double utilization = 2;
+    string device_arch = 3;
+}
+
+message ProtoMonStreamFramesInfo {
+    string stream_name = 1;
+    ProtoMonStreamDirection stream_direction = 2;
+    int32 buffer_frames_size = 3;
+    int32 pending_frames_count = 4;
+    int32 min_pending_frames_count = 5;
+    int32 max_pending_frames_count = 6;
+    double avg_pending_frames_count = 7;
+}
+
+message ProtoMonNetworkFrames {
+    string network_name = 1;
+    repeated ProtoMonStreamFramesInfo streams_frames_infos = 2;
+}
+
+message ProtoMon {
+    string pid = 1;
+    repeated ProtoMonInfo networks_infos = 2;
+    repeated ProtoMonNetworkFrames net_frames_infos = 3;
+    repeated ProtoMonDeviceInfo device_infos = 4;
+}

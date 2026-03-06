@@ -1,0 +1,1 @@
+from hailo_platform.pyhailort.power_measurement import *  # noqa F401

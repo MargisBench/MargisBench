@@ -1,0 +1,6 @@
+{
+    "Quantization": ["QInt8", "QUInt8"],
+    "Pruning": ["Random", "LnStructured"],
+    "Distillation": [true, false]
+}
+

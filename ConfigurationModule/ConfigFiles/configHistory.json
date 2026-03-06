@@ -1,0 +1,447 @@
+{
+    "d929f85cc9d034cecd2a839b9151a34c01b76357476e5e24d5270202": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": true,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": false,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/efficientnet.pth",
+                "device": "cpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "EfficientNet from Custom Models"
+            }
+        ],
+        "optimizations": {
+            "Quantization": {
+                "method": "QInt8",
+                "type": "static"
+            },
+            "Pruning": {
+                "method": "L1Unstructured",
+                "amount": 0.7
+            }
+        },
+        "dataset": {
+            "dataset_path": "./ModelData/Dataset/dataset_name",
+            "batch_size": 32
+        }
+    },
+    "d85c3e978d242d51dd5c19e4b6266c241795262781805de002a28020": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": true,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": false,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/efficientnet.pth",
+                "device": "cpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "EfficientNet from Custom Models"
+            }
+        ],
+        "optimizations": {
+            "Quantization": {
+                "method": "QInt8",
+                "type": "static"
+            },
+            "Pruning": {
+                "method": "L1Unstructured",
+                "amount": 0.7
+            }
+        },
+        "dataset": {
+            "dataset_path": "./ModelData/Dataset/dataset_name",
+            "batch_size": 32
+        }
+    },
+    "d58d1740d58466cc6e77dd2edd213a0b037b16e3778fa6f1b7583721": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": false,
+                "distilled": false,
+                "weights_path": "ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": false,
+                "distilled": false,
+                "weights_path": "ModelData/Weights/casting_efficientnet_b0.pth",
+                "device": "cpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "EfficientNet from Custom Models"
+            }
+        ],
+        "optimizations": {
+            "Quantization": {
+                "method": "QInt8",
+                "type": "static"
+            },
+            "Pruning": {
+                "method": "L1Unstructured",
+                "amount": 0.7
+            }
+        },
+        "dataset": {
+            "dataset_path": "./ModelData/Dataset/dataset_name",
+            "batch_size": 32
+        }
+    },
+    "4254db8cdd80fbe4b1a72f4f14730f19805fb344e49c062570655a44": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": false,
+                "distilled": false,
+                "weights_path": "ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": false,
+                "distilled": false,
+                "weights_path": "ModelData/Weights/casting_efficientnet_b0.pth",
+                "device": "cpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "EfficientNet from Custom Models"
+            }
+        ],
+        "optimizations": {
+            "Pruning": {
+                "method": "L1Unstructured",
+                "amount": 0.7
+            }
+        },
+        "dataset": {
+            "data_dir": "ModelData/Dataset/dataset_name",
+            "batch_size": 32
+        }
+    },
+    "1c1da82ad13a4637d10f4847c547b2290071df7cef3b36a85c26c3e0": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": true,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": false,
+                "distilled": false,
+                "weights_path": "./ModelData/Weights/casting_efficientnet_b0.pth",
+                "device": "gpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights",
+                "image_size": 224,
+                "num_classes": 1000,
+                "task": "classification",
+                "description": "EfficientNet from Custom Models"
+            }
+        ],
+        "optimizations": {
+            "Quantization": {
+                "method": "QInt8",
+                "type": "static"
+            },
+            "Pruning": {
+                "method": "L1Unstructured",
+                "amount": 0.7
+            }
+        },
+        "dataset": {
+            "data_dir": "./ModelData/Dataset/dataset_name",
+            "batch_size": 32
+        }
+    },
+    "339d30d87ecc_generic": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": false,
+                "weights_path": "ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet",
+                "native": true,
+                "weights_path": "./ModelData/Weights/casting_efficientnet_b0.pth",
+                "device": "cpu",
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "EfficientNet from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "mnasnet1_0",
+                "native": false,
+                "weights_path": "ModelData/Weights/mnasnet1_0.pth",
+                "device": "cpu",
+                "class_name": "mnasnet1_0",
+                "weights_class": "MNASNet1_0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "mnasnet_v2 from torchvision"
+            }
+        ],
+        "optimizations": {
+            "Pruning": {
+                "method": "LnStructured",
+                "n": 1,
+                "amount": 0.1,
+                "epochs": 2
+            },
+            "Distillation": {
+                "method": true,
+                "distilled_paths": {
+                    "mobilenet_v2": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mobilenet_v2_distilled.pth",
+                    "efficientnet": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/efficientnet_b0_distilled.pth",
+                    "mnasnet1_0": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mnasnet1_0_distilled.pth"
+                }
+            }
+        },
+        "dataset": {
+            "data_dir": "ModelData/Dataset/casting_data",
+            "batch_size": 1
+        },
+        "repetitions": 2,
+        "platform": "generic",
+        "arch": "x86_64"
+    },
+    "948823b5ea9c_fusion_844_ai": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "resnet18",
+                "native": true,
+                "weights_path": "ModelData/Weights/resnet18.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "resnet18",
+                "weights_class": "ResNet18_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "resnet18 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v3_large",
+                "native": true,
+                "weights_path": "ModelData/Weights/mobilenet_v3_large.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "mobilenet_v3_large",
+                "weights_class": "MobileNet_V3_Large_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "mobilenet_v3_large from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet_b2",
+                "native": true,
+                "weights_path": "ModelData/Weights/efficientnet_b2.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "efficientnet_b2",
+                "weights_class": "EfficientNet_B2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "efficientnet_b2 from torchvision"
+            }
+        ],
+        "optimizations": {
+            "Pruning": {
+                "method": "LnStructured",
+                "n": 1,
+                "amount": 0.05,
+                "epochs": 1
+            },
+            "Distillation": {
+                "method": true,
+                "distilled_paths": {
+                    "resnet18": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/resnet18_distilled.pth",
+                    "mobilenet_v3_large": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mobilenet_v3_large_distilled.pth",
+                    "efficientnet_b2": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/efficientnet_b2_distilled.pth"
+                }
+            }
+        },
+        "dataset": {
+            "data_dir": "ModelData/Dataset/casting_data",
+            "batch_size": 1
+        },
+        "repetitions": 2,
+        "platform": "fusion_844_ai",
+        "arch": "x86_64"
+    },
+    "1b0dc384cb53_fusion_844_ai": {
+        "models": [
+            {
+                "module": "torchvision.models",
+                "model_name": "resnet18",
+                "native": true,
+                "weights_path": "ModelData/Weights/resnet18.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "resnet18",
+                "weights_class": "ResNet18_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "resnet18 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "mobilenet_v2",
+                "native": false,
+                "weights_path": "ModelData/Weights/mobilenet_v2.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "mobilenet_v2",
+                "weights_class": "MobileNet_V2_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "Mobilenet V2 from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "efficientnet_b0",
+                "native": true,
+                "weights_path": "./ModelData/Weights/efficientnet_b0.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "efficientnet_b0",
+                "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "EfficientNet from torchvision"
+            },
+            {
+                "module": "torchvision.models",
+                "model_name": "mnasnet1_0",
+                "native": false,
+                "weights_path": "ModelData/Weights/mnasnet1_0.pth",
+                "device": "cpu",
+                "qat_mode": false,
+                "class_name": "mnasnet1_0",
+                "weights_class": "MNASNet1_0_Weights.DEFAULT",
+                "image_size": 224,
+                "num_classes": 2,
+                "task": "classification",
+                "description": "mnasnet_v2 from torchvision"
+            }
+        ],
+        "optimizations": {
+            "Pruning": {
+                "method": "LnStructured",
+                "n": 1,
+                "amount": 0.05,
+                "epochs": 1
+            },
+            "Distillation": {
+                "method": true,
+                "distilled_paths": {
+                    "resnet18": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/resnet18_distilled.pth",
+                    "mobilenet_v2": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mobilenet_v2_distilled.pth",
+                    "efficientnet_b0": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/efficientnet_b0_distilled.pth",
+                    "mnasnet1_0": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mnasnet1_0_distilled.pth"
+                }
+            }
+        },
+        "dataset": {
+            "data_dir": "ModelData/Dataset/casting_data",
+            "batch_size": 1
+        },
+        "repetitions": 30,
+        "platform": "fusion_844_ai",
+        "arch": "x86_64"
+    }
+}

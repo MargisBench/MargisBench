@@ -1,0 +1,81 @@
+{
+    "models": [
+        {
+            "module": "torchvision.models",
+            "model_name": "resnet18",
+            "native": true,
+            "weights_path": "ModelData/Weights/resnet18.pth",
+            "device": "cpu",
+            "class_name": "resnet18",
+            "weights_class": "ResNet18_Weights.DEFAULT",
+            "image_size": 224,
+            "num_classes": 2,
+            "task": "classification",
+            "description": "resnet18 from torchvision"
+        },
+        {
+            "module": "torchvision.models",
+            "model_name": "mobilenet_v2",
+            "native": true,
+            "weights_path": "./ModelData/Weights/mobilenet_v2.pth",
+            "device": "cpu",
+            "class_name": "mobilenet_v2",
+            "weights_class": "MobileNet_V2_Weights.DEFAULT",
+            "image_size": 224,
+            "num_classes": 2,
+            "task": "classification",
+            "description": "Mobilenet V2 from torchvision"
+        },
+        {
+            "module": "torchvision.models",
+            "model_name": "efficientnet_b0",
+            "native": true,
+            "weights_path": "./ModelData/Weights/efficientnet_b0.pth",
+            "device": "cpu",
+            "class_name": "efficientnet_b0",
+            "weights_class": "EfficientNet_B0_Weights.DEFAULT",
+            "image_size": 224,
+            "num_classes": 2,
+            "task": "classification",
+            "description": "EfficientNet from torchvision"
+        },
+        {
+            "module": "torchvision.models",
+            "model_name": "mnasnet1_0",
+            "native": true,
+            "weights_path": "ModelData/Weights/mnasnet1_0.pth",
+            "device": "cpu",
+            "class_name": "mnasnet1_0",
+            "weights_class": "MNASNet1_0_Weights.DEFAULT",
+            "image_size": 224,
+            "num_classes": 2,
+            "task": "classification",
+            "description": "mnasnet_v2 from torchvision"
+        }
+    ],
+    "optimizations": {
+        "Quantization": {
+            "method": "Int8"
+        },
+        "Pruning": {
+            "method": "LnStructured",
+            "n": 1,
+            "amount": 0.05,
+            "epochs": 1
+        },
+        "Distillation": {
+            "method": true,
+            "distilled_paths": {
+                "resnet18": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/resnet18_distilled.pth",
+                "mobilenet_v2": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mobilenet_v2_distilled.pth",
+                "efficientnet_b0": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/efficientnet_b0_distilled.pth",
+                "mnasnet1_0": "/home/frabru99/Sync/MasterThesis/MargisBench/ModelData/Weights/mnasnet1_0_distilled.pth"
+            }
+        }
+    },
+    "dataset": {
+        "data_dir": "ModelData/Dataset/casting_data",
+        "batch_size": 1
+    },
+    "repetitions": 30
+}

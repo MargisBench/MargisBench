@@ -1,0 +1,15 @@
+{
+    "generic":[
+        "Quantization",
+        "Pruning",
+        "Distillation"
+    ],
+    "coral":[
+        "Pruning",
+        "Distillation"
+    ],
+    "fusion_844_ai":[
+        "Pruning",
+        "Distillation"
+    ]
+}

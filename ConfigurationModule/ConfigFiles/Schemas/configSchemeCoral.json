@@ -1,0 +1,162 @@
+{
+"type": "object",
+"properties": {
+    "models": {
+        "description": "An array of model definitions.",
+        "type": "array", 
+
+        "items": {
+            "type": "object", 
+            "required": ["model_name", "native"],
+            "properties": {
+                "module": {
+                    "description":"Name of the module required for the model load. Depends on the framework. For torchivision: torchvision.models",
+                    "type": "string"
+                },
+                "model_name" : {
+                    "description":"Name of the model.",
+                    "type": "string"
+                },
+                "native": {
+                    "description": "If the model considered is native or custom.",
+                    "type": "boolean"
+                },
+                "weights_path": {
+                    "description": "The file path of the model's weights.",
+                    "type": "string",
+                    "format": "path"
+                },
+                "device":{
+                    "description": "The device that the model should use.",
+                     "enum": ["cpu", "gpu", "cuda"]
+                },
+                "class_name":{
+                    "description": "The name of the model class required. Depends on the framework. For torchvision mobilenet v2: mobilenet_v2",
+                    "type": "string"
+                }, 
+                "weights_class":{
+                    "description": "The name of the weights class required. Depends on the framework. For torchvision mobilenet v2 weights: MobileNet_V2_Weights",
+                    "type": "string"
+                },
+                "image_size":{
+                    "description": "The desired image size for the inputs.",
+                    "type": "number"
+                },
+                "num_classes":{
+                    "description": "The desired number of classes for the classification task.",
+                    "type": "number"
+                },
+                "task":{
+                    "description": "Task of the model.",
+                    "type": "string"
+                },
+                "desc":{
+                    "description": "The description of the model.",
+                    "type": "string"
+                }
+            },
+            "anyOf": [
+                {
+                    "properties":{"native": {"const": true}}
+                },
+
+                {
+                    "required":["module","weights_path","class_name","image_size","num_classes","task","weights_class"]
+                }
+            ]
+        },
+        "minItems": 2
+    },
+    "optimizations": {
+        "description": "A collection of optimization pparameters.",
+        "type": "object",
+        "properties": {
+            "Pruning": {
+                "description": "Pruning level object", 
+                "type": "object",
+                "required": ["method", "amount", "epochs"],
+                "properties":{
+                    "method": {"type": "string"},
+                    "amount": {
+                        "type": "number",
+                        "exclusiveMinimum": 0,
+                        "maximum": 1
+                    },
+                    "epochs": {
+                        "description": "Number of epochs choosen for retraining after structured pruning",
+                        "type": "integer",
+                        "exclusiveMinimum": 0 
+                    }, 
+                    "n": {
+                        "type": "integer",
+                        "minimum": 1
+                    
+                    }
+                },
+                "if": {
+                    "properties":{
+                        "method": {
+                            "const": "LnStructured"
+                        }
+                    }
+                }, 
+                "then": {
+                    "required":["n"]
+                }
+            },
+            "Distillation": {
+                "description": "Desidered Distillation",
+                "type": "object",
+                "properties": {
+                    "method": {"type": "boolean"},
+                    "distilled_paths": {
+                        "type": "object",
+                        "description": "Map where Key=ModelName and Value=FilePath",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        
+        "additionalProperties": false,
+        "maxItems": 1
+    },
+    "dataset": {
+        "description": "The path to the dataset",
+        "type": "object",
+        "required": ["data_dir","batch_size"],
+        "properties":{
+            "data_dir":{
+                "description": "The inference dataset's path.",
+                "type": "string", 
+                "format": "path"
+            }, 
+            "batch_size":{
+                "description": "The batch size",
+                "type":"number"
+            }
+        },
+        "maxItems": 1
+
+    },
+    "repetitions":{
+        "description": "Repetition for each couple (Model, Optimization) in the DoE.",
+        "type": "integer",
+        "exclusiveMinimum": 1
+    },
+
+    "platform": {
+        "description": "Hardware Platform used for the experiments (e.g., Fusion 884 AI, Google Coral etc.)",
+        "type": "string"
+    },
+    "arch": {
+        "description": "Architecture Type, where the framework is executed.",
+        "type": "string"
+    }
+},
+
+"required": ["models", "optimizations", "dataset", "repetitions"],
+"additionalProperties": true
+}
