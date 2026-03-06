@@ -271,7 +271,7 @@ margis -c default
 In the default way, **MargisBench** will load the configuration from `ConfigurationModule/ConfigFiles/config.json`. 
 The `ConfigurationModule/ConfigFiles/config.json` file will be overwritten at every execution of a *new* configuration (e. g. with a different file provided by **config-path flag** or created with **interactive** mode), therefore it represents the last configuration provided to the framework that was correctly parsed. 
 
-The configuration file provided should be similar to that shown in [Configuration Structure Example](#-configuration-structure-example) section.
+The configuration file provided should be similar to that shown in [Configuration Structure Example](../../wiki/About-Configuration-Files-and-JSON-Schemas#complete-configuration-examples) section.
 
 >[!WARNING]
 >
@@ -281,7 +281,7 @@ To provide an external configuration file
 ```bash
 margis -c <path-to-json-config-file>
 ```
-The configuration should be compliant to the [JSON Schema](../../wiki/About-Configuration-Files) which is specific to the chosen platform. 
+The configuration should be compliant to the [JSON Schema](../../wiki/About-Configuration-Files-and-JSON-Schemas) which is specific to the chosen platform. 
 
 
 #### **Interactive Mode**
