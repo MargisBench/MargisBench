@@ -169,7 +169,7 @@ The `DoE` class in `BenchmarkingFactory/doe.py` acts as the orchestrator.
 
 > [!NOTE]
 >
->To know more about configurations composition, feature and limits please check [About Configuration Files](../../wiki/About-Configuration-Files) wiki page. If you are willing to compile configurations file manually, read the mentioned section carefully. 
+>To know more about configurations composition, feature and limits please check [About Configuration Files](../../wiki/About-Configuration-Files-and-JSON-Schemas) wiki page. If you are willing to compile configurations file manually, read the mentioned section carefully. 
 
 
 <br />
